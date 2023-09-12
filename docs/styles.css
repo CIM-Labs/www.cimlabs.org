@@ -9,6 +9,7 @@ header, nav {
     background-color: #333;
     color: white;
     padding: 1rem 5%;
+    padding-top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,7 +53,7 @@ li {
 }
 
 #hero {
-    background-color: #0099cc;
+    background-color: #610c0c;
     color: white;
     text-align: center;
     padding: 5% 0;
