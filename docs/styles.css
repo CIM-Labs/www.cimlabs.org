@@ -83,8 +83,15 @@ li {
     color: darkgray;
 }
 
-header, section {
-    margin-bottom: 1em;
+header {
+    margin: 0;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+section {
+    margin: 0;
     padding: 1em;
     border: 1px solid #ddd;
     border-radius: 8px;
