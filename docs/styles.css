@@ -60,7 +60,7 @@ li {
 }
 
 #hero {
-    background-color: #610c0c;
+    background-color: #3d0000;
     color: white;
     text-align: center;
     padding: 1% 0;
@@ -71,6 +71,11 @@ li {
     font-size: 1rem;
     cursor: pointer;
     margin-top: 2rem;
+}
+
+#hero h1 {
+    padding: 0;
+    color:aliceblue;
 }
 
 header, section {
@@ -122,6 +127,8 @@ form {
 input, textarea, button {
     padding: 0.5rem;
     font-size: 1rem;
+    border: #333;
+    border-radius: .25rem;
 }
 
 .row {
