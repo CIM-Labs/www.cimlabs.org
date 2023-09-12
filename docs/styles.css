@@ -3,7 +3,7 @@ body, p, div, h1, h2, h3, h4, h5, h6, table, tbody, tr, td, span, blockquote, a,
 	outline:0;
 	font-family:Arial, Helvetica, Sans-Serif;
     background-color: #252525;
-	color:#ddd;
+	color: #eee;
 	vertical-align:baseline;
 	list-style:none;
 	text-decoration:none;
@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
 
 h1 {
     margin-bottom: 1em;
-    color: #007BFF;
+    color: gold;
 }
 
 ul {
@@ -75,7 +75,7 @@ li {
 
 #hero h1 {
     padding: 0;
-    color:aliceblue;
+    color:gold;
 }
 
 #hero p {
@@ -85,27 +85,27 @@ li {
 header {
     margin: 0;
     padding: 1em;
-    border: 1px solid #ddd;
+    border: 1px solid darkgrey;
     border-radius: 8px;
 }
 
 section {
     margin: 0;
     padding: 1em;
-    border: 1px solid #ddd;
+    border: 1px solid darkgrey;
     border-radius: 8px;
 }
 
 article {
     margin-bottom: 1em;
     padding: 1em;
-    border: 1px solid #ddd;
+    border: 1px solid darkgrey;
     border-radius: 8px;
 }
 
 section h1 {
     margin: 0;
-    color: #074822;
+    color: gold;
 }
 
 article h2 {
@@ -115,12 +115,11 @@ article h2 {
 article p {
     margin: 0;
     margin-top: 1em;
-    color: black;
 }
 
 footer {
     background-color: #333;
-    color: white;
+    color: #ddd;
     text-align: center;
     padding: 1rem 0;
 }
@@ -138,7 +137,7 @@ form {
 input, textarea, button {
     padding: 0.5rem;
     font-size: 1rem;
-    border: #333;
+    border: darkgrey;
     border-radius: .25rem;
 }
 
