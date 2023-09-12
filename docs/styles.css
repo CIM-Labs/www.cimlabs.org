@@ -87,6 +87,24 @@ article {
     border-radius: 8px;
 }
 
+section.h1 {
+    margin: 0;
+    color: #007BFF;
+}
+
+article.h2 {
+    margin: 0;
+}
+
+article.p {
+    margin: 0;
+    margin-top: 1em;
+    color: #007BFF;
+}
+
+
+
+
 footer {
     background-color: #333;
     color: white;
