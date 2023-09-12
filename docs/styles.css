@@ -112,6 +112,10 @@ footer {
     padding: 1rem 0;
 }
 
+footer.p {
+    color:darkgray;
+}
+
 form {
     display: flex;
     flex-direction: column;
