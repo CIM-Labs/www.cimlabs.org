@@ -1,8 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 2em;
-    line-height: 1.6;
-    color: #333;
+body, p, div, h1, h2, h3, h4, h5, h6, table, tbody, tr, td, span, blockquote, a, abbr, address, cite, code, img, ul, ol, li, dl, dd, dt, form, label, fieldset, caption, input, textarea, button {
+	border:0;
+	outline:0;
+	font-family:Arial, Helvetica, Sans-Serif;
+	color:#fff;
+	vertical-align:baseline;
+	list-style:none;
+	text-decoration:none;
+	line-height:1.5em;
+	margin:0;
+	padding:0
 }
 
 header, nav {
