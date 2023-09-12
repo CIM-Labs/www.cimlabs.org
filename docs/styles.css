@@ -2,7 +2,8 @@ body, p, div, h1, h2, h3, h4, h5, h6, table, tbody, tr, td, span, blockquote, a,
 	border:0;
 	outline:0;
 	font-family:Arial, Helvetica, Sans-Serif;
-	color:#252525;
+    background-color: #252525;
+	color:#ddd;
 	vertical-align:baseline;
 	list-style:none;
 	text-decoration:none;
@@ -78,6 +79,10 @@ li {
     color:aliceblue;
 }
 
+#hero p {
+    color: darkgray;
+}
+
 header, section {
     margin-bottom: 1em;
     padding: 1em;
@@ -94,7 +99,7 @@ article {
 
 section h1 {
     margin: 0;
-    color: #007BFF;
+    color: #074822;
 }
 
 article h2 {
