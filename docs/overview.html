@@ -53,17 +53,17 @@
         </article>
 
         <article>
-            <h5>Commands</h5>
+            <h4>Commands</h4>
             <p>Commands are instructive messages that trigger actions within the system. Every Command has a unique identity, ensuring traceability and accountability. Commands encapsulate the Entities they aim to influence, ensuring all pertinent information is available when a Command is executed. Importantly, Commands, when processed, can only result in the production of Events. These Events record the outcomes or changes prompted by the Command, adding another layer of traceability.</p>
         </article>
 
         <article>
-            <h5>Queries</h5>
+            <h4>Queries</h4>
             <p>Queries solicit specific data or details from the system. Like Commands, each Query is uniquely identified, promoting tracking and management. They include references to the Entities they're concerned with, enabling the system to extract precise data promptly and efficiently. Though Queries solicit information, they can also lead to the generation of Events if the system's state or understanding changes as a result of the Query.</p>
         </article>
         
         <article>
-            <h5>Transactions</h5>
+            <h4>Transactions</h4>
             <p>Transactions ase mechanisms encapsulating logic and operations, functioning as state machines. They are the sequences of business operations or workflows that drive results.</p>
             <p>Commands or Queries, when executed, can lead to Transactions – sequences of operations or activities resulting in a shift of state in the system. The unique identity of each Command and Query, combined with the Entity details they encompass, ensures that every Transaction is precise, trackable, and congruent with the intended business logic. This design guarantees the integrity and resilience of business processes within the CIM structure.</p>
         </article>
