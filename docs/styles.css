@@ -13,6 +13,7 @@ body, p, div, h1, h2, h3, h4, h5, h6, table, tbody, tr, td, span, blockquote, a,
 }
 
 header, nav {
+    background-color: #252525;
     color: white;
     padding: 0;
     display: flex;
