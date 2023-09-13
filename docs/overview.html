@@ -34,41 +34,44 @@
     <section id="foundation">
         <h2>The Foundation</h2>
 
+        <h3>CIM's Core Elements</h3>
+
+        <article>                
+            <h4>Events</h4>
+            <p>In contrast to traditional models that segment data storage, expecting retrieval only on demand, an event-driven paradigm thrives on immediacy and dynamism. Instead of waiting to be prompted, events proactively announce new information. These event streams serve as real-time bulletins of changes within the system. By actively subscribing to these streams, businesses are equipped to respond instantaneously, creating a landscape that's not only efficient but highly adaptive.</p>
+            <p>Adopting an "Asynchronous First" approach ensures that these events don't tie up system resources waiting for responses. Instead, they capitalize on non-blocking interactions, facilitating complex business workflows to be modeled with fluidity and precision. This dynamic architecture enables businesses to evolve, adapt, and respond with unparalleled speed, ensuring alignment with ever-shifting business demands.</p>
+        </article>
+
         <article>
-            <h3>CIM's Core Elements</h3>
-            
-            <section>                
-                <h4>Events</h4>
-                <p>In contrast to traditional models that segment data storage, expecting retrieval only on demand, an event-driven paradigm thrives on immediacy and dynamism. Instead of waiting to be prompted, events proactively announce new information. These event streams serve as real-time bulletins of changes within the system. By actively subscribing to these streams, businesses are equipped to respond instantaneously, creating a landscape that's not only efficient but highly adaptive.</p>
-                <p>Adopting an "Asynchronous First" approach ensures that these events don't tie up system resources waiting for responses. Instead, they capitalize on non-blocking interactions, facilitating complex business workflows to be modeled with fluidity and precision. This dynamic architecture enables businesses to evolve, adapt, and respond with unparalleled speed, ensuring alignment with ever-shifting business demands.</p>
-
-                <h4>Entities</h4>
-                <p>Every Entity is distinct and carries a unique identification to ensure there's no ambiguity or overlap. These are formed by combining various Components, which can be thought of as the building blocks that give an Entity its structure and purpose. The idea is analogous to assembling different parts to create a unique machine. In a business context, an Entity might represent a specific product, department, or even a business process. Its unique identification ensures that whenever it's referenced or called upon, there's absolute clarity about which Entity is in focus.</p>    
-
-                <h4>Components</h4>
-                <p>Components are fundamental building blocks that help form Entities within the CIM structure. Unlike Entities, Components themselves do not possess unique IDs. Instead, they are simple value objects that can be brought together, or "composed", to create more complex structures, like Entities. Think of Components as the raw materials or basic ingredients in a recipe, where the final dish (the Entity) is the combination of these ingredients. By ensuring Components are free from unique identifiers, we maintain their simplicity and reusability across different Entities. This ensures flexibility and avoids unnecessary complexities in the system.</p>
-    
-                <h4>Commands & Queries</h4>
-                <p>Commands and Queries are at the heart of the CIM system, serving as the primary communication or message carriers between different parts of the system.</p>
-
-                <article>
-                    <h5>Commands</h5>
-                    <p>Commands are instructive messages that trigger actions within the system. Every Command has a unique identity, ensuring traceability and accountability. Commands encapsulate the Entities they aim to influence, ensuring all pertinent information is available when a Command is executed. Importantly, Commands, when processed, can only result in the production of Events. These Events record the outcomes or changes prompted by the Command, adding another layer of traceability.</p>
-                </article>
-
-                <article>
-                    <h5>Queries</h5>
-                    <p>Queries solicit specific data or details from the system. Like Commands, each Query is uniquely identified, promoting tracking and management. They include references to the Entities they're concerned with, enabling the system to extract precise data promptly and efficiently. Though Queries solicit information, they can also lead to the generation of Events if the system's state or understanding changes as a result of the Query.</p>
-                </article>
-                
-                <article>
-                    <h5>Transactions</h5>
-                    <p>Transactions ase mechanisms encapsulating logic and operations, functioning as state machines. They are the sequences of business operations or workflows that drive results.</p>
-                    <p>Commands or Queries, when executed, can lead to Transactions – sequences of operations or activities resulting in a shift of state in the system. The unique identity of each Command and Query, combined with the Entity details they encompass, ensures that every Transaction is precise, trackable, and congruent with the intended business logic. This design guarantees the integrity and resilience of business processes within the CIM structure.</p>
-                </article>
-            </section>
+            <h4>Entities</h4>
+            <p>Every Entity is distinct and carries a unique identification to ensure there's no ambiguity or overlap. These are formed by combining various Components, which can be thought of as the building blocks that give an Entity its structure and purpose. The idea is analogous to assembling different parts to create a unique machine. In a business context, an Entity might represent a specific product, department, or even a business process. Its unique identification ensures that whenever it's referenced or called upon, there's absolute clarity about which Entity is in focus.</p>    
         </article>
         
+        <article>
+            <h4>Components</h4>
+            <p>Components are fundamental building blocks that help form Entities within the CIM structure. Unlike Entities, Components themselves do not possess unique IDs. Instead, they are simple value objects that can be brought together, or "composed", to create more complex structures, like Entities. Think of Components as the raw materials or basic ingredients in a recipe, where the final dish (the Entity) is the combination of these ingredients. By ensuring Components are free from unique identifiers, we maintain their simplicity and reusability across different Entities. This ensures flexibility and avoids unnecessary complexities in the system.</p>
+        </article>
+
+        <article>
+            <h5>Commands</h5>
+            <p>Commands are instructive messages that trigger actions within the system. Every Command has a unique identity, ensuring traceability and accountability. Commands encapsulate the Entities they aim to influence, ensuring all pertinent information is available when a Command is executed. Importantly, Commands, when processed, can only result in the production of Events. These Events record the outcomes or changes prompted by the Command, adding another layer of traceability.</p>
+        </article>
+
+        <article>
+            <h5>Queries</h5>
+            <p>Queries solicit specific data or details from the system. Like Commands, each Query is uniquely identified, promoting tracking and management. They include references to the Entities they're concerned with, enabling the system to extract precise data promptly and efficiently. Though Queries solicit information, they can also lead to the generation of Events if the system's state or understanding changes as a result of the Query.</p>
+        </article>
+        
+        <article>
+            <h5>Transactions</h5>
+            <p>Transactions ase mechanisms encapsulating logic and operations, functioning as state machines. They are the sequences of business operations or workflows that drive results.</p>
+            <p>Commands or Queries, when executed, can lead to Transactions – sequences of operations or activities resulting in a shift of state in the system. The unique identity of each Command and Query, combined with the Entity details they encompass, ensures that every Transaction is precise, trackable, and congruent with the intended business logic. This design guarantees the integrity and resilience of business processes within the CIM structure.</p>
+        </article>
+    </section>
+
+    <section id="strategy">
+        <h2>Strategic Implications</h2>
+
         <article>
             <h3>CIM as a Relationship-Centric Model</h3>
             <p>Whereas traditional systems frequently hinge on fixed top-down hierarchies, CIM emphasizes a network of interconnections and relationships. Rather than isolating data or processes within silos, CIM champions adaptability through its rich sets of links. This relationship-centric approach allows businesses to navigate swiftly and seamlessly, ensuring they can recalibrate with agility to address evolving demands.</p>
@@ -83,10 +86,6 @@
             <h3>Application of Category Theory</h3>
             <p>By leveraging the methods of "Applied Category Theory", CIM offers formal proofs for its functionalities. This mathematical rigor ensures the system's tests and capabilities are both validated and proven, much like quality checks and certifications in business operations.</p>
         </article>
-    </section>
-
-    <section id="strategy">
-        <h2>Strategic Implications</h2>
 
         <article>
             <h3>Integration with Large Language Models & AI</h3>
