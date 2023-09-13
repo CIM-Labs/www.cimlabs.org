@@ -162,5 +162,6 @@ input, textarea, button {
 }
 
 #hero p {
+    background-color: transparent;
     color: darkgray;
 }
