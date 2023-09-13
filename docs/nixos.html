@@ -31,7 +31,7 @@
         <p>NixOS, with its functional approach to system configuration management, is built on principles that resonate well with the philosophies of the CIM. At the heart of NixOS are flake files that declare project dependencies, and modules which define configurations and services.</p>
 
         <article id="flakes-as-entities">
-            <h3>1. <strong>Flakes as Entities:</strong></h3>
+            <h3>Flakes as Entities</h3>
             <p>In the context of CIM, consider each NixOS flake as an entity. Each flake is self-contained, uniquely identifiable (with its own ID), and carries metadata and dependencies about the project. These characteristics align with the principles of entities in CIM:</p>
             <ul>
                 <li><strong>Flake Identity</strong>: Each flake has a unique ID and a defined set of inputs (dependencies), ensuring it can be referenced unambiguously.</li>
@@ -41,7 +41,7 @@
         </article>
     
         <article id="modules-as-components">
-            <h3>2. <strong>Modules as Components:</strong></h3>
+            <h3>Modules as Components</h3>
             <p>Modules in NixOS can be seen as components within the CIM structure. They are reusable, and their configurations can be composed to build larger, complex configurations:</p>
             <ul>
                 <li><strong>Composability</strong>: Multiple modules can be combined to form a complete NixOS configuration, aligning with the idea of components coming together to form entities.</li>
@@ -50,7 +50,7 @@
         </article>
         
         <article id="relationship-centric-model">
-            <h3>3. <strong>Relationship-Centric Model with NixOS:</strong></h3>
+            <h3>Relationship-Centric Model with NixOS</h3>
             <p>NixOS inherently supports a relationship-centric model. Dependencies are explicitly declared, and there is a clear understanding of how configurations, packages, or services relate to one another:</p>
             <ul>
                 <li><strong>Explicit Dependencies</strong>: In the CIM model, relationships are paramount. The explicit declaration of dependencies in NixOS ensures clarity and removes ambiguity.</li>
@@ -59,7 +59,7 @@
         </article>
         
         <article id="integration-points-messaging">
-            <h3>4. <strong>Integration Points & Messaging:</strong></h3>
+            <h3>Integration Points & Messaging</h3>
             <p>Leveraging the event-driven paradigm of CIM, integration points between NixOS and other systems can be established:</p>
             <ul>
                 <li><strong>Event Listeners for Flakes & Modules</strong>: Create event listeners that monitor changes in flakes and modules. These listeners can then generate events which can be processed within the CIM.</li>
@@ -68,7 +68,7 @@
         </article>
         
         <article id="ai-automation">
-            <h3>5. <strong>AI & Automation in NixOS via CIM:</strong></h3>
+            <h3>AI & Automation in NixOS via CIM</h3>
             <p>Harness the power of AI and large language models to predict potential issues in configurations, recommend optimizations, and automate routine tasks in the NixOS environment.</p>
         </article>
     
