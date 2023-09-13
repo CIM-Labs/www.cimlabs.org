@@ -150,11 +150,13 @@ input, textarea, button {
     padding: 1% 0;
 }
 
-#hero button {
+button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
     margin-top: 2rem;
+    background-color: #3d0000;
+    color: darkgoldenrod;
 }
 
 #hero h1 {
