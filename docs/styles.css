@@ -59,29 +59,6 @@ li {
     margin-bottom: 0.5em;
 }
 
-#hero {
-    background-color: #3d0000;
-    color: white;
-    text-align: center;
-    padding: 1% 0;
-}
-
-#hero button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 2rem;
-}
-
-#hero h1 {
-    padding: 0;
-    color:gold;
-}
-
-#hero p {
-    color: darkgray;
-}
-
 header {
     margin: 0;
     padding: 1em;
@@ -125,6 +102,7 @@ footer {
 }
 
 footer p {
+    background-color: #333;
     color:darkgray;
 }
 
@@ -148,3 +126,34 @@ input, textarea, button {
   .column {
     flex: 50%;
   }
+
+
+/* IDs */
+#intro h1 {
+    background-color: #3d0000;    
+    color: darkgoldenrod;
+  }
+
+#hero {
+    background-color: #3d0000;
+    color: white;
+    text-align: center;
+    padding: 1% 0;
+}
+
+#hero button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+#hero h1 {
+    padding: 0;
+    background-color: #3d0000;    
+    color: darkgoldenrod;
+}
+
+#hero p {
+    color: darkgray;
+}
