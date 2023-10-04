@@ -125,18 +125,15 @@ input, textarea, button {
     display: flex;
   }
   
-  .column {
+.column {
     flex: 50%;
   }
 
+.fullwidth {
+    text-align: center;
+  }
 
 /* IDs */
-
-#hero {
-    background-color: #3d0000;
-    color: darkgoldenrod;
-    text-align: center;
-}
 
 #intro h1 {
     background-color: #3d0000;    

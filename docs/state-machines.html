@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composable Information Machine (CIM): A Strategic Guide for Business</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <header>
+      <nav>
+          <div id="logo"><a href="./index.html">CIM Labs</a></div>
+          <ul>
+              <li><a href="./overview.html">Overview</a></li>
+              <li><a href="./blueprint.html">Business Benefits</a></li>
+              <li><a href="./technology.html">Technical Features</a></li>
+              <li><a href="./index.html#contact">Contact Us</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <section id="hero">
+    <h1>Composable Information Machine (CIM): State Machines</h1>
+  </section>
+
+  <section id="summary">
+    <h2>Summary</h2>
+    <p>Mealy State Machines are integrated into the CIM architecture for event generation based on message state transitions.</p>
+  </section>
+
+  <section id="overview">
+    <h2>Overview</h2>
+    <p>In a Mealy State Machine, each state transition is governed by both an input and an output. In the context of CIM, the inputs are Messages—comprising Commands, Queries, and Events—and the outputs are Events generated as a result of the message processing.</p>
+  </section>
+
+  <section id="states-as-homotopy-types">
+    <h3>States as Homotopy Types</h3>
+    <p>Homotopy is a way of classifying geometric regions by studying the different types of paths that can be drawn in the region.</p>
+    <p>Each state in the Mealy State Machine can be considered a Homotopy Type. This classification of states into types enables a rigorous, mathematical framework for reasoning about the system's behavior. Moreover, state transitions can be viewed as morphisms between these types.</p>
+  </section>
+
+  <section id="functional-morphisms-for-state-transitions">
+    <h3>Functional Morphisms for State Transitions</h3>
+    <p>Each transition function (or morphism) should adhere to the standards of a Grothendieck construction, ensuring a strict and well-defined transition process. For example, a message in state <code>A</code> triggering a transition to state <code>B</code> would involve a morphism <code>f: A -&gt; B</code>.</p>
+  </section>
+
+  <section id="event-generation-process">
+    <h2 >Event Generation Process</h2>
+    <ol>
+    <li>
+    <p><strong>Message Reception</strong>: Upon the receipt of a message, an <code>MessageReceived</code> event is generated as the initial output. This event also serves to log the incoming message for tracking and auditing purposes.</p>
+    </li>
+    <li>
+    <p><strong>Authorization</strong>: The message undergoes an authorization check.</p>
+    <ul>
+    <li>For Commands, this produces a <code>CommandAuthorized</code> event.</li>
+    <li>For Queries, a <code>QueryAuthorized</code> event is generated.</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>State Transition and Event Emission</strong>: The authorized message initiates a state transition, effectively triggering another morphism that reflects the change from one Homotopy Type to another. An associated <code>MessageProcessed</code> event is emitted to signify this transition.</p>
+    </li>
+    <li>
+    <p><strong>Persistence</strong>: Finally, the new state is persisted, and a <code>MessagePersisted</code> event is generated.</p>
+    </li>
+    </ol>
+  </section>
+
+  <section id="communication-architecture">
+    <h2>Communication Architecture</h2>
+    <p>CIM employs a gossip protocol to disseminate messages across its internal network. Each node in this network hosts a messenger service managed by systemd and NixOS. This decentralized approach ensures that the Mealy State Machine's transitions and event generations are consistent across all instances.</p>
+  </section>
+
+  <section id="properties-of-the-cim-model-with-mealy-state-machines">
+    <h2>Properties of the CIM Model with Mealy State Machines</h2>
+    <ol>
+    <li>
+    <p><strong>Functional Integrity</strong>: The system is structured so that each state and each transition function (morphism) adheres to functional programming paradigms. This facilitates easier reasoning and proofs about the system's behavior.</p>
+    </li>
+    <li>
+    <p><strong>Immutability</strong>: All events are immutable and uniquely identified via CIDs (Content Identifiers), contributing to the integrity and traceability of the system.</p>
+    </li>
+    <li>
+    <p><strong>Modularity</strong>: Following the UNIX philosophy of &quot;Do one thing and do it well,&quot; each module in the system is designed to handle a specific function or process, reinforcing the principles of modularity and separation of concerns.</p>
+    </li>
+    </ol>
+    <p>In summary, the integration of Mealy State Machines into the CIM architecture offers a structured, mathematical, and functional approach to event generation based on message state transitions.</p>
+  </section>
+
+  <section id="mealy-state-machine-for-messages">
+    <h2>Mealy State Machine for Messages</h2>
+    <article>
+        <h3 id="states">States:</h3>
+        <ul>
+        <li>New: When a message is just created.</li>
+        <li>Serialized: Post-serialization.</li>
+        <li>Deserialized: Post-deserialization.</li>
+        <li>Sent: Message sent.</li>
+        <li>Received: Message received.</li>
+        <li>Acknowledged: Acknowledgment received.</li>
+        <li>Failed: Processing or sending failed.</li>
+        <li>Persisted: Saved for auditing or debugging.</li>
+        </ul>    
+    </article>
+    <article>
+        <h3 id="transitions">Transitions:</h3>
+        <ul>
+        <li>New -&gt; Serialized: Triggered by MessageSerialized</li>
+        <li>Serialized -&gt; Sent: Triggered by MessageSent</li>
+        <li>Sent -&gt; Received: Triggered by MessageReceived</li>
+        <li>Received -&gt; Acknowledged: Triggered by MessageAcknowledged</li>
+        <li>Any -&gt; Failed: Triggered by MessageFailed</li>
+        <li>Any -&gt; Persisted: Triggered by MessagePersisted</li>
+        </ul>
+      </article>
+  </section>
+
+  <section id="mealy-state-machine-for-commands">
+    <h2 >Mealy State Machine for Commands</h2>
+    <article>
+        <h3 id="states">States:</h3>
+        <ul>
+        <li>Issued: Initial sent state.</li>
+        <li>Validated: Post-validation.</li>
+        <li>Authorized: Post-authorization.</li>
+        <li>Processed: Successfully carried out.</li>
+        <li>Rejected: Failed validation or execution.</li>
+        </ul>
+        </article>
+    <article>
+        <h3 id="transitions">Transitions:</h3>
+        <ul>
+        <li>Issued -&gt; Validated: Triggered by CommandValidated</li>
+        <li>Validated -&gt; Authorized: Triggered by CommandAuthorized</li>
+        <li>Authorized -&gt; Processed: Triggered by CommandProcessed</li>
+        <li>Any -&gt; Rejected: Triggered by CommandRejected</li>
+        </ul>
+    </article>
+  </section>
+
+  <section id="mealy-state-machine-for-queries">
+    <h2>Mealy State Machine for Queries</h2>
+    <article>
+        <h3 id="states">States:</h3>
+        <ul>
+        <li>Made: Initial sent state.</li>
+        <li>Validated: Post-validation.</li>
+        <li>Authorized: Post-authorization.</li>
+        <li>Processed: Query execution complete.</li>
+        <li>Responded: Response sent back.</li>
+        </ul>
+    </article>
+    <article>
+        <h3 id="transitions">Transitions:</h3>
+        <ul>
+        <li>Made -&gt; Validated: Triggered by QueryValidated</li>
+        <li>Validated -&gt; Authorized: Triggered by QueryAuthorized</li>
+        <li>Authorized -&gt; Processed: Triggered by QueryProcessed</li>
+        <li>Processed -&gt; Responded: Triggered by QueryResponded</li>
+        </ul>
+    </article>
+  </section>
+
+  <section id="closing">
+    <p>Each state machine will drive the state transitions of its corresponding message type based on the events listed.</p>
+  </section>
+
+  <div id="state graph">
+    <h3>State Graph</h3>
+    <pre class="mermaid">
+        graph TD;
+        %% Message State Machine
+        subgraph "Message State Machine"
+            MNew[New]
+            MSer[Serialized]
+            MDes[Deserialized]
+            MSent[Sent]
+            MRec[Received]
+            MAck[Acknowledged]
+            MFail[Failed]
+            MPers[Persisted]
+
+            MNew -->|MessageSerialized| MSer
+            MSer -->|MessageSent| MSent
+            MSent -->|MessageReceived| MRec
+            MRec -->|MessageAcknowledged| MAck
+            MNew -->|MessageFailed| MFail
+            MSer -->|MessageFailed| MFail
+            MSent -->|MessageFailed| MFail
+            MRec -->|MessageFailed| MFail
+            MAck -->|MessageFailed| MFail
+            MNew -->|MessagePersisted| MPers
+            MSer -->|MessagePersisted| MPers
+            MSent -->|MessagePersisted| MPers
+            MRec -->|MessagePersisted| MPers
+            MAck -->|MessagePersisted| MPers
+        end
+
+        %% Command State Machine
+        subgraph "Command State Machine"
+            CIssued[Issued]
+            CVal[Validated]
+            CAuth[Authorized]
+            CProc[Processed]
+            CRej[Rejected]
+
+            CIssued -->|CommandValidated| CVal
+            CVal -->|CommandAuthorized| CAuth
+            CAuth -->|CommandProcessed| CProc
+            CIssued -->|CommandRejected| CRej
+            CVal -->|CommandRejected| CRej
+            CAuth -->|CommandRejected| CRej
+        end
+
+        %% Query State Machine
+        subgraph "Query State Machine"
+            QMade[Made]
+            QVal[Validated]
+            QAuth[Authorized]
+            QProc[Processed]
+            QRes[Responded]
+
+            QMade -->|QueryValidated| QVal
+            QVal -->|QueryAuthorized| QAuth
+            QAuth -->|QueryProcessed| QProc
+            QProc -->|QueryResponded| QRes
+        end
+    </pre>
+  </div>
+
+  <div id="state-diagram">
+    <h3>State Diagram</h3>
+    <pre class="mermaid">
+        stateDiagram
+        %% Message State Machine
+        [*] --> New : Message State Machine
+        New --> Serialized : MessageSerialized
+        Serialized --> Sent : MessageSent
+        Sent --> Received : MessageReceived
+        Received --> Acknowledged : MessageAcknowledged
+        New --> Failed : MessageFailed
+        Serialized --> Failed : MessageFailed
+        Sent --> Failed : MessageFailed
+        Received --> Failed : MessageFailed
+        Acknowledged --> Failed : MessageFailed
+        New --> Persisted : MessagePersisted
+        Serialized --> Persisted : MessagePersisted
+        Sent --> Persisted : MessagePersisted
+        Received --> Persisted : MessagePersisted
+        Acknowledged --> Persisted : MessagePersisted
+        
+        %% Command State Machine
+        [*] --> Issued : Command State Machine
+        Issued --> Validated : CommandValidated
+        Validated --> Authorized : CommandAuthorized
+        Authorized --> Processed : CommandProcessed
+        Issued --> Rejected : CommandRejected
+        Validated --> Rejected : CommandRejected
+        Authorized --> Rejected : CommandRejected
+    
+        %% Query State Machine
+        [*] --> Made : Query State Machine
+        Made --> Validated : QueryValidated
+        Validated --> Authorized : QueryAuthorized
+        Authorized --> Processed : QueryProcessed
+        Processed --> Responded : QueryResponded
+    
+    </pre>
+  </div>
+
+    <footer>
+        <p>&copy; 2023 CIM Labs - Reproducible Resilience</p>
+    </footer>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+</body>
+</html>
